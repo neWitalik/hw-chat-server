@@ -5,24 +5,17 @@ import java.util.Date;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-/*
-
-	C-> 			S						List
-				/add POST(JSON message) ->  0
-				/get?from=3 GET				1
-											2'
-											3
- */
-
 public class Message {
 	private Date date = new Date();
 	private String from;
 	private String to;
 	private String text;
 
-	public Message(String from, String text) {
+	public Message(String from, String text, Date date, String to) {
 		this.from = from;
 		this.text = text;
+		this.date = date;
+		this.to = to;
 	}
 
 	public String toJSON() {
